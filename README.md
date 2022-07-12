@@ -11,7 +11,7 @@ This project is developed by Parth Shukla for Google Summer of Code 2022 with Re
 
 ## Quick Index of Daily Progress
 ### Community Bonding Period 
-- [Blog Report 1](#blog-report-1) (May 20 ~ May 26) 
+- [Blog Report 1](#blog-report-1) (May 20 ~ Jun 12) 
 
 ### Coding Period
 - [Blog Report 2](#blog-report-2) (Jun 13 ~ Jun 19)
@@ -123,4 +123,37 @@ If you background information on ResNet, I recommend going through this [article
 
 Output of layer 3 gives us a 14x14 matrix whereas layer 4 gives us a 7x7. These matrices are then expanded to 224x224 which is superimposed on the original image to visualise output. An observation was that layer 3 would give more number of regions because there are more discontinuous regions whereas layer 4 being smaller would give lesser number of outputs. 
 
-### Blog Report 3 
+### Blog Report 3
+
+Goals for this week:
+1. Utilise HPC to train models
+2. Complete the module which can crop out and extract the regions of interest produced by Grad-CAM for different classes
+
+HPC is something completely new to me. HPC provides us with a tremendous amount of computatinal power and it is important to properly undrstand the capabilities of it while also understanding that it is a shared space and you should not cause any inconvenience to fellow participants. I spent sometime reading up on the techne site to better understand how to schedule tasks. There are two ways to access GPUs i.e interactive job and batch job. I was more comfortable using the batch job. To submit batch jobs you need to submit slurm scripts. I have uploaded my slurm scripts in my repository for anyone stuck in the same position as me. Getting my jobs running on the cluster took some time and I was stuck on it for a few days. Thanks to Dr. Peter Uhrig I was able to figure it out on a scheduled call. After that, I trained my model on the cluster.
+
+
+Object extractor
+
+If I cosider the results after the layer 3 of ResNet50, I get the following 14x14 matrix(truncated image)
+
+![](images/1_6brE_eJIU3WEuPwfM9lVkg.png)
+
+I need to find the connected regions in this matrix. This can be easily solved by applying Depth First Search, similar to "Count the number of island". I also applied a criteria that a cell could only be considered valid if its value was greater than the median of the entire matrix. This would help to ignore foreground pixels.
+
+Intermediate output looks like 
+
+![](images/1_VZt2XxfFtcoqGx_wF9buiA.png)
+
+After getting this, we just need to bound an “island” in a box. For example, the island 2 would be bounded by a rectangle covering the columns 2–4 in row 1.
+
+Coordinates for these boxes, once we get, can be easily extrapolated to get the exact pixel location for the object of interest in the image.
+
+For example, Let’s take an example of Mary
+
+![](images/mary.png)
+
+Output of the module for Mary
+
+![](images/regionsof_mary.png)
+
+
