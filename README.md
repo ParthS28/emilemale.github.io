@@ -156,4 +156,48 @@ Output of the module for Mary
 
 ![](images/regionsof_mary.png)
 
+### Blog Report 4
 
+Goals for this week
+- Putting all of the work done till now together
+- Research on EfficientNet as a method for the second module
+
+I compiled all the code and put it al together so that I could run it on the cluster and get the results back on my computer to observe. The data used for this part was test data i.e data previously unseen by the model. 
+
+Difficulties
+
+1. Storing the meta-data for the extracted objects.
+2. Nomenclature of the extracted images should be consistent as the they are huge in number(for example, can have 170 regions of interest for all the classes combined, if not more, now considering only the test dataset which is roughly 4000 pieces of art, we could be dealing with storing 170*4000=680,000 images).
+3. Not all of these 680,000 images are useful entities, there is a possibility that it may only contain background pixels not representing anything of substance. This problem would be tackled in the next part of our pipeline.
+4. The huge amount of images being produced were difficult to work with.
+
+Solutions
+
+1. I stored the metadata in this format for now
+![](images/out1.png)
+
+Columns - object_id, item(basically Image name, consistent with ArtDL), associated_class(which is the class for which the object was generated) and actual_class(which is the class it belongs to according to ArtDL).
+
+4. One method to reduce number of images was if I took output for layer 4 instead of layer 3 of my ResNet50 model as it would privide a 7x7 matrix.
+
+So where are we now?
+
+![](images/DFD%20GSOC%20(1).jpg)
+
+And this is how images look like
+
+![](images/extracted_data.png)
+
+In order to make sense of these extracted images, I wanted to train a classifier on a dataset of images of some popular symbols of iconography eg, Baby(for baby jesus),Book,Key,Flowers,Cross,Ointment jar,Arrow,Bird,Sword,Dog. I tried EfficientNet architecture to do so, here is [the notebook]() for it. However, the results were not promising on the extracted objects. My theory behind why it might not be performing well: 1) Training data was not translating well to the testing data maybe because the testing data was way more than training data 2) Curated dataset on which the  model was trained was not good enough 3) Testing data may be too dissimilar to training data.
+
+**Meeting**
+
+Sharing my result and progress on the call, I was adviced to try to focus on Mother Mary and see how the results are. Build in a modular way so that it is possible to expand the pipeline going forward. This change makes sense as well since the dataset I am using has around 60% examples of Mary.
+
+So based on this I modified my approach a little. 
+
+### Blog Report 5
+
+Goals
+1. Modify pipeline to accomodate the change mentioned above
+2. 
