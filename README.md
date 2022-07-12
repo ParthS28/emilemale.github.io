@@ -1,4 +1,4 @@
-## Welcome to FrameBlends Project 
+## Welcome to Emile Male Pipeline
 
 This project is developed by Parth Shukla for Google Summer of Code 2022 with Red Hen Lab
 
