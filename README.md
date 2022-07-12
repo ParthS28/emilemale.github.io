@@ -188,7 +188,7 @@ And this is how images look like
 
 ![](images/extracted_data.png)
 
-In order to make sense of these extracted images, I wanted to train a classifier on a dataset of images of some popular symbols of iconography eg, Baby(for baby jesus),Book,Key,Flowers,Cross,Ointment jar,Arrow,Bird,Sword,Dog. I tried EfficientNet architecture to do so, here is [the notebook]() for it. However, the results were not promising on the extracted objects. My theory behind why it might not be performing well: 1) Training data was not translating well to the testing data maybe because the testing data was way more than training data 2) Curated dataset on which the  model was trained was not good enough 3) Testing data may be too dissimilar to training data.
+In order to make sense of these extracted images, I wanted to train a classifier on a dataset of images of some popular symbols of iconography eg, Baby(for baby jesus),Book,Key,Flowers,Cross,Ointment jar,Arrow,Bird,Sword,Dog. I tried EfficientNet architecture to do so, here is [the notebook](https://github.com/ParthS28/gsoc22-christian-iconography/blob/master/notebooks/EfficientNet_training.ipynb) for it. However, the results were not promising on the extracted objects. My theory behind why it might not be performing well: 1) Training data was not translating well to the testing data maybe because the testing data was way more than training data 2) Curated dataset on which the  model was trained was not good enough 3) Testing data may be too dissimilar to training data.
 
 **Meeting**
 
@@ -200,4 +200,37 @@ So based on this I modified my approach a little.
 
 Goals
 1. Modify pipeline to accomodate the change mentioned above
-2. 
+2. Re-training ResNet50 from the first module
+3. Getting the extracted objects similar to the outputs you see above but with the new model only for MARY
+
+My modified pipeline looked something like this
+![](images/DFD%20GSOC%20(2).jpg)
+
+The main change from the previous approach is that, the system first tries to decide if art is of Mary
+
+1. If it is Mary, extracts the object using CAM and stores its instance
+2. If it is not Mary, extracts objects using CAM for Mary and stores its instance
+
+But why do we need this change?
+
+Let’s say we have an image tagged with the label St. Sebastian. However, when the artist was painting this, they were told to also include a Pear in the painting. Pear is an important symbol for Mother Mary as it shows the sweetness of her soul. Artist included this to give associate Mother Mary to the scene depicted in the painting.
+
+Our first module will be able to classify this image as OTHER i.e not related to Mary, however there still are elements to Mary in this, for example the Pear. When we pass this image through our first module. We get the output of a cropped image of the pear with the metadata saying that the pear represents Mother Mary. This information will then need to be ingested into our Knowledge Graph.
+
+Implementation
+
+To implement this, I had to change the way I was passing the training data to model. If the image was of Mary, I was passing the label 0 and if it was any other saint then I would pass the label 1. Training ResNet50 for only a few epochs I was able to achieve ~81 percent testing accuracy. In additon to these changes, I also freeze first two blocks of ResNet50 which showed an increase in performance.
+
+For getting the output this time, I decided to utilise the layer 4 of ResNet because of the reason I mentioned a few pages up, the amount of outputs I got from layer 3 were huge and inpossible to observe and were redundant too.
+
+The metadata file for outputs looks like this
+![](images/out7x7.png)
+
+Explanation - First row has the object_id out0_0_0.png, this means it is output of first image in the testing dataset and the current label for it 0(MARY) and it is the first object extracted in this image.
+
+First number - index number in the testing dataset
+
+Second Number - Class number i.e 0 for MARY and 1 for OTHER
+
+Third Number - Counter for number of instances produced for that particular image and class
+
