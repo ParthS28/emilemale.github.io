@@ -233,3 +233,42 @@ Second Number - Class number i.e 0 for MARY and 1 for OTHER
 
 Third Number - Counter for number of instances produced for that particular image and class
 
+### Blog Report 6
+
+Goals
+1. Find methods to create embeddings using Iconography texts
+
+#### Monday
+
+Further reading of material on Mary and making a note of her symbols like Crown, Lilies, Mystic [or Mystical] Rose, Iris, Pear, Fleur-de-lys(?), Baby Jesus, Rosary, Stars(from crown of stars), Blue robe, Crescent - because of immaculate conception, Granada. Collected a few images on these items and ran EfficientNet.
+
+
+- Mentor meeting
+
+Continued discussion of the scope of the project with Prof. Mark Turner and Tiago Torrent. Format of blog was also discussed. Tiago mentioned some ideas using the large corpora of christian iconography texts available. Some possibilities like texts can be used to generate a domain for christian iconography, also examples of how caption generation techniques can be used to help image tagging. 
+
+- Ideas after the meeting
+1. See how to utilise textual data to create embeddings 
+2. Look into auxillary learning
+3. Find previous relevant computer vision work in Iconclass for indicators
+
+- Problems I'm still not sure how to solve
+How to use Computer Vision for these images to utilise the embeddings. Maybe use YOLOv6 on images and then each instance can become a relationship between the two objects and then the embeddings can help me in tagging the image.
+
+#### Tuesday
+
+- Restructuring the blog similar to the style followed by Wenyue Xi (Suzie) for Google Summer of Code 2020 for [their project](https://suziexi.github.io/frameblends.github.io/). Reason - previously I was only blogging results and decisions, however it is also important to document all the challenges faced in the process because other people will certainly face difficulties and this would help them understand how my project progressed and why I did certain things and how they could build on it and don't struggle on the same step.  
+- Read up on Auxillary Learning. Highly recommend going through [this article](https://vivien000.github.io/blog/journal/learning-though-auxiliary_tasks.html) for it. 
+
+#### Wednesday
+
+Looking into ways to create embeddings. According to wiki, Word embedding is the collective name for a set of language modeling and feature learning techniques in natural language processing (NLP) where words or phrases from the vocabulary are mapped to vectors of real numbers. One of the most common example for learning embeddings are word2vec. I have worked with word2vec before, mostly using GloVe, however I have never learnt embeddings from scratch. There is a good [article](https://towardsdatascience.com/creating-word-embeddings-coding-the-word2vec-algorithm-in-python-using-deep-learning-b337d0ba17a8) on it. 
+
+Results: 
+
+![](images/vectorspace.png)
+
+Words in close association to Mary
+![](images/outw2v.png)
+
+There is more scope to this method because we can see 'lorenzettis' who is a painter, 'crucifixion', 'heaven' and 'child' in closeness to Mary but there is more need for data cleaning and selecting the right type texts so that more relevant symbols can be close to Mary. 
