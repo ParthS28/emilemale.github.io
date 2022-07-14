@@ -272,3 +272,20 @@ Words in close association to Mary
 ![](images/outw2v.png)
 
 There is more scope to this method because we can see 'lorenzettis' who is a painter, 'crucifixion', 'heaven' and 'child' in closeness to Mary but there is more need for data cleaning and selecting the right type texts so that more relevant symbols can be close to Mary. 
+
+#### Thursday 
+
+- Learnt further about embeddings. [link](https://www.featureform.com/post/the-definitive-guide-to-embeddings)
+- Another great [article](http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/) on Word2Vec.
+- [Towards Generating and Evaluating Iconographic Image Captions of Artworks](https://pubmed.ncbi.nlm.nih.gov/34460759/)
+- [Multi-modal Label Retrieval for the Visual Arts: The Case of Iconclass](https://www.scitepress.org/Papers/2021/103906/103906.pdf)
+
+In order to leverage Word2Vec embeddings, I have come up with a possible solution that could help us confirm our tags and also change tags if confident enough. It is based on something Tiago Torrent mentioned on the class where we can utilise textual data to create embeddings and those embeddings help us tag image or even correct images. These methods are very popular incaption generation tasks.
+
+![](images/DFD_classifier.jpg)
+
+The "Mark as mislabel" in the classifier can be used to change the label as well if the confidence score received by using the embeddings are confident enough.
+
+Problems in this technique:
+- The embeddings need to be more representative, this would require more cleaning of textual data and also adding more sources. I am looking into this.
+- There are no datasets or models that can generalise well enough for the task which is to be done by YOLO. I will have manually define what symbols to target and tag some current artworks to train YOLO.
