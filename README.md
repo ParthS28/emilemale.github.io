@@ -279,6 +279,7 @@ There is more scope to this method because we can see 'lorenzettis' who is a pai
 - Another great [article](http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/) on Word2Vec.
 - [Towards Generating and Evaluating Iconographic Image Captions of Artworks](https://pubmed.ncbi.nlm.nih.gov/34460759/)
 - [Multi-modal Label Retrieval for the Visual Arts: The Case of Iconclass](https://www.scitepress.org/Papers/2021/103906/103906.pdf)
+- [Iconclass image captioning](https://github.com/EvaCet/Iconclass-image-captioning)
 
 In order to leverage Word2Vec embeddings, I have come up with a possible solution that could help us confirm our tags and also change tags if confident enough. It is based on something Tiago Torrent mentioned on the class where we can utilise textual data to create embeddings and those embeddings help us tag image or even correct images. These methods are very popular incaption generation tasks.
 
@@ -289,3 +290,10 @@ The "Mark as mislabel" in the classifier can be used to change the label as well
 Problems in this technique:
 - The embeddings need to be more representative, this would require more cleaning of textual data and also adding more sources. I am looking into this.
 - There are no datasets or models that can generalise well enough for the task which is to be done by YOLO. I will have manually define what symbols to target and tag some current artworks to train YOLO.
+
+#### Friday
+
+- Learnt about [YOLO](https://machinelearningknowledge.ai/yolov6-explained-with-tutorial-and-example/)
+- Plan on how to utilise captions from [here](https://github.com/EvaCet/Iconclass-image-captioning) using [Iconclass AI test set](https://labs.brill.com/ictestset/). Iconclass AI test set has a json file which contains image filenames with associated Iconclass categorisation. For now, since our scope is limited to MARY we can utilise all the filenames with classes starting with "11F" and search for their captions on the [github repo](https://github.com/EvaCet/Iconclass-image-captioning). 
+- Discussion with Rishab on how to integrate our projects. 
+- Try different texts for Word2Vec.
