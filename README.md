@@ -297,3 +297,38 @@ Problems in this technique:
 - Plan on how to utilise captions from [here](https://github.com/EvaCet/Iconclass-image-captioning) using [Iconclass AI test set](https://labs.brill.com/ictestset/). Iconclass AI test set has a json file which contains image filenames with associated Iconclass categorisation. For now, since our scope is limited to MARY we can utilise all the filenames with classes starting with "11F" and search for their captions on the [github repo](https://github.com/EvaCet/Iconclass-image-captioning). 
 - Discussion with Rishab on how to integrate our projects. 
 - Try different texts for Word2Vec.
+
+### Blog Report 7
+
+Goals-
+- Create embeddings and utilise them 
+- Train YOLO on a dataset with annotations for Christian Iconoraphy. This process would would require me to curate a dataset and annotate them and followed by training.
+
+#### Monday
+
+- Tried training Word2Vec on HPC, however ran into trouble relatin to versioning so will continue trying to fix that.
+- Began the process of curating a dataset for training YOLO. Tagged a hundred images belonging to Mary with objects such as baby, person, angel, book, jar, crown etc. In a lot of the images, we have mary depicted as a maiden with a baby on lap or on her arms. However, some of the artwork really stands out in their potrayal of Mary.
+
+Current version of the dataset: [link](https://drive.google.com/file/d/1nj8mDtV73DsbA-i_J2R2Irb1Mda0eqcj/view?usp=sharing)
+
+Some generalizations I have made during tagging: It is tough to distinuguish between halo and a crown and both of them rest at the top of the head, so I have tagged them under the same label. Jar - Jar is for ointment jar which is common for Mary Magdalene, but still appears in Mother Mary so I have tagged them and moving forward we can see if they turn out to be useful.
+
+![](images/mary3.png)
+
+This is a Mary image with a lot going on. There are instances of Person, Crown, Bird, Angels. 
+
+![](images/mary1.png)
+
+In this mary is represented as a kid with a person, who I can only assume to be Joachim because of age difference and their potrayal, this would deceive our classifier which is used to seeing a baby and a lady in a picture so call it Mary.
+
+![](images/mary2.png)
+
+In this Mary is represented as a kid, however I'm not sure why this style has been applied
+
+![](images/mary4.png)
+
+Another potrayal of slightly older Mary, praying in front of a book. Again, it does not contain the repetitive features that we observe and could fool the anyone.
+
+![](images/mary5.png)
+
+Marriage of Mary and Joseph. This one in particular is also different in style to the others.
