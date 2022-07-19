@@ -319,7 +319,7 @@ This is a Mary image with a lot going on. There are instances of Person, Crown, 
 
 ![](images/mary1.png)
 
-In this mary is represented as a kid with a person, who I can only assume to be Joachim because of age difference and their potrayal, this would deceive our classifier which is used to seeing a baby and a lady in a picture so call it Mary.
+In this mary is represented as a kid with a person, who I can only assume to be Joachim because of age difference and their potrayal, this would deceive our classifier which is used to seeing a baby and a lady in a picture.
 
 ![](images/mary2.png)
 
@@ -327,8 +327,57 @@ In this Mary is represented as a kid, however I'm not sure why this style has be
 
 ![](images/mary4.png)
 
-Another potrayal of slightly older Mary, praying in front of a book. Again, it does not contain the repetitive features that we observe and could fool the anyone.
+Another potrayal of slightly youunger Mary, praying in front of a book. Again, it does not contain the repetitive features that we observe and could fool anyone.
 
 ![](images/mary5.png)
 
 Marriage of Mary and Joseph. This one in particular is also different in style to the others.
+
+#### Tuesday
+
+- [Training YOLOv6](https://github.com/meituan/YOLOv6/blob/main/docs/Train_custom_data.md)
+ 
+Completed tagging approximately 250 images with twelve classes. 
+- baby
+- person
+- angel
+- book
+- jar
+- crown
+- bird
+- crescent
+- flowers
+- crucifixion
+- pear
+- skull
+
+The dataset is available [here](https://drive.google.com/file/d/10S0UoKgHpduXbJNkYuMNUYmuHXx5ed7j/view?usp=sharing). My hope for this dataset is that in the future it might be possible extend this for other symbols or maybe set-up semi-supervised learning methods to tag more images.
+
+However, the distribution is not even. In fact, it is highly disproportionate towards classes like person and baby. Currently, training YOLOv6 to observe results. 
+
+Results: 
+
+![](images/yolo01.jpg)
+
+![](images/yolo02.jpg)
+
+![](images/yolo03.jpg)
+
+![](images/yolo04.jpg)
+
+Some good outputs: 
+
+![](images/goodyolo2.jpg)
+
+![](images/goodyolo1.jpg)
+
+![](images/goodyolo3.jpg)
+
+Some bad observations where the model failed:
+
+![](images/badyolo1.jpg)
+
+![](images/badyolo2.jpg)
+
+These show the deficiencies of the if artwork of different styles is passed, however one might consider that these artworks might even confuse an untrained eye as the first one is extremely dark and the second one is monochrome.
+
