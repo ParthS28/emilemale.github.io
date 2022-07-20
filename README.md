@@ -381,3 +381,24 @@ Some bad observations where the model failed:
 
 These show the deficiencies of the if artwork of different styles is passed, however one might consider that these artworks might even confuse an untrained eye as the first one is extremely dark and the second one is monochrome.
 
+#### Wednesday
+
+- Compiling the modules together
+- Cleaning of texts to produce better embeddings 
+
+Methods used to clean texts:
+- In texts many titles of Mary are used, which are not useful to us, to replace them with Mary.
+- Similarly, some other words have been changed with their synonyms to make embeddings more uniforms.
+- The methods mentioned above have helped the embeddings because the texts I am using right now are fewer in number. I think if a huge corpus of good and less noisy texts are found, these techniques would not be required.
+- Removing punctuations using the string library.
+- Removing common words in the dictionary using stop words from the nltk library.
+- Stemming. See [this link](https://www.analyticsvidhya.com/blog/2021/11/an-introduction-to-stemming-in-natural-language-processing/). I am currently using Lancaster stemming.
+
+Current results: 
+Words like baby, crown, crucifix, book are close enough to mary to be considered as related to her. One example which is not in favor of this method is that pear which closely associated with Mary is further away. I think this problem can be solved by increasing the size of the training examples.
+
+Now that we have all three models that I planned for the pipeline defined after the mentor meet. i can start compiling them together and observe results.
+
+![](images/DFD_classifier.jpg)
+
+Our initial classifier was giving us around a 76 percent accuracy on the entire dataset of 42000 images. My hope is that this pipeline can increase that accuracy, even if by a few percentage.
