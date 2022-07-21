@@ -402,3 +402,38 @@ Now that we have all three models that I planned for the pipeline defined after 
 ![](images/DFD_classifier.jpg)
 
 Our initial classifier was giving us around a 76 percent accuracy on the entire dataset of 42000 images. My hope is that this pipeline can increase that accuracy, even if by a few percentage.
+
+#### Thursday
+
+- Putting the pipeline together.
+- Divided it into 3 stages - The initial classifier, YOLOv6, and then the word embeddings.
+
+The demo code can be found [here](https://github.com/ParthS28/gsoc22-christian-iconography/tree/master/modules/emilemale_demo)
+
+Bash script for the pipeline
+`
+#!/bin/bash
+
+source venv/bin/activate
+python3 stage1.py
+echo stage 1 done
+
+cd YOLOv6
+python tools/infer.py --yaml data/dataset.yaml --img-size 416 --weights runs/train/exp1/weights/best_ckpt.pt --source ../data/images
+mkdir ../out2
+cp -r runs/inference/exp/ ../out2/
+cd ..
+echo stage 2 done
+
+python3 stage3.py
+echo task completed
+`
+
+Results - 
+I took 10 semi-random(random however slightly monitored so that I could observe few different type of inputs) images from the dataset.
+
+After passing through the initial classifier i.e stage 1 of the pipeline, I was getting 30 percent accuracy. You can see the detailed results [here](https://github.com/ParthS28/gsoc22-christian-iconography/blob/master/modules/emilemale_demo/out1.csv).
+
+Then passing through the stage 2 and stage 3 of the pipeline that increased to 70 percent. [Detailed results](https://github.com/ParthS28/gsoc22-christian-iconography/blob/master/modules/emilemale_demo/final.csv).
+
+One thing to note here is, at the end of the day it is only 10 examples and we do not know how well they will generalize. I will try to pass the entire dataset through the pipeline tomorrow.
