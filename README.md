@@ -411,7 +411,7 @@ Our initial classifier was giving us around a 76 percent accuracy on the entire 
 The demo code can be found [here](https://github.com/ParthS28/gsoc22-christian-iconography/tree/master/modules/emilemale_demo)
 
 Bash script for the pipeline
-`
+```
 #!/bin/bash
 
 source venv/bin/activate
@@ -427,7 +427,7 @@ echo stage 2 done
 
 python3 stage3.py
 echo task completed
-`
+```
 
 Results - 
 I took 10 semi-random(random however slightly monitored so that I could observe few different type of inputs) images from the dataset.
