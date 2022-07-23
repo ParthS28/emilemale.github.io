@@ -20,6 +20,7 @@ This project is developed by Parth Shukla for Google Summer of Code 2022 with Re
 - [Blog Report 5](#blog-report-5) (Jul 4 ~ Jul 10)
 - [Blog Report 6](#blog-report-6) (Jul 11 ~ Jul 17)
 - [Blog Report 7](#blog-report-7) (Jul 18 ~ Jul 24) 
+- [Progress Check](#progress-check)
 
 
 
@@ -437,3 +438,22 @@ After passing through the initial classifier i.e stage 1 of the pipeline, I was 
 Then passing through the stage 2 and stage 3 of the pipeline that increased to 70 percent. [Detailed results](https://github.com/ParthS28/gsoc22-christian-iconography/blob/master/modules/emilemale_demo/final.csv).
 
 One thing to note here is, at the end of the day it is only 10 examples and we do not know how well they will generalize. I will try to pass the entire dataset through the pipeline tomorrow.
+
+#### Friday
+
+Running the entire pipeline on around 2000 images. I wrote a python script to observe the difference in score after stage 1 and stage 3. 
+
+After stage 1, I observed a score of 50 percent(which is less than what I expected and observed before), however after passing through the entire pipeline it increased to more than 80 percent. These results were way better than I expected, so I need to check them more in detail and see if stage 1 is underperforming or stage 2 and 3 are overperforming.
+
+Mentor meeting 
+- I showed them a demo of the pipeline and discussed outputs and what modules required more finetuning.
+- Discussed on what to do next.
+- I suggested to work on the singularity next and push this to the Case Western HPC because singularities are new to me and I do not know how much time I will need to learn about them. So it would be better if I first try to make a singularity on my own and see how much time I need, then going forward I can decide how much time I can dedicate to separate modules.
+
+#### Saturday
+
+- Presentation for meeting on monday
+- Progress check with the timeline decided in my initial proposal
+
+### Progress Check
+
