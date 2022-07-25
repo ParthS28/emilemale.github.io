@@ -457,3 +457,28 @@ Mentor meeting
 
 ### Progress Check
 
+Original Gantt chart
+
+![](images/gantt.png)
+
+According to the timeline I proposed in the beginning, by now I should have worked in CAM methods and a general-purpose object classifier, which I have. Links to the work
+- [Grad-CAM training module](https://github.com/ParthS28/gsoc22-christian-iconography/tree/master/modules/grad_cam_trainer)
+- [Extracting objects module](https://github.com/ParthS28/gsoc22-christian-iconography/tree/master/modules/extracting_objects)
+- [EfficientNet training notebook](https://github.com/ParthS28/gsoc22-christian-iconography/blob/master/notebooks/EfficientNet_training.ipynb) for general-object classifier
+
+However, these results were not impressive enough and might not even scale very well going forward. I had to change my plan.
+
+I tried focussing only on mother mary and seeing how well I could build a system that could just say if an image contained mother mary or not. I trained a basic classifier for this task - [notebook](https://github.com/ParthS28/gsoc22-christian-iconography/blob/master/notebooks/classifier(only_mary).ipynb).
+
+An interesting thought given by Tiago was to try to utilise the vast library of texts and create a sort of embedding space for words. So I decided to explore that space. 
+
+I collected data only from two sources, [https://en.wikipedia.org/wiki/Titles_of_Mary#Descriptive_titles_of_Mary_related_to_visual_arts](https://en.wikipedia.org/wiki/Titles_of_Mary#Descriptive_titles_of_Mary_related_to_visual_arts) and [https://www.christianiconography.info/maryPortraits.html](https://www.christianiconography.info/maryPortraits.html). Very little data, but high quality data. See [data](https://github.com/ParthS28/gsoc22-christian-iconography/blob/master/modules/word2vec/input/data4.csv) and [data](https://github.com/ParthS28/gsoc22-christian-iconography/blob/master/modules/word2vec/input/data3.csv). Passed this data through cleaning pipeline and create embeddings. You can find the code [here](https://github.com/ParthS28/gsoc22-christian-iconography/tree/master/modules/word2vec).
+
+After this, I had to train the YOLO part of the pipeline. In order to not be redundant, I recommend through [Blog Report 7](#blog-report-7) in which I had described the process thoroughly, right from the dataset curation to the training.
+
+What I plan to do next?
+I have decided a list of targets I think are possible and listed them in the order of priority.
+- Singularity - Contain my current pipeline in singularity. I think it would take 1 week to learn about singularity and code it, but I am not sure about this and that is why I want to finish this first so that I am comfortable with the concept and I know how much time it takes which wouldn't cause me to rush my project in the end.
+- Create better embeddings - Finding better data and putting better cleaning techniques should give better embeddings eventually helping the pipeline.
+- Tagging more data for YOLO and getting better labels. For example, on call Mark explained how a lamb is also a common symbol in christian iconography which I was not aware about, so I must've missed some stuff during initial dataset curation, which can be helpful to the pipeline.
+- Finally, adding a module to pipeline that can help to classify which era does a mary painting belong to.
