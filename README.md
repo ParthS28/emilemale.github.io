@@ -21,7 +21,7 @@ This project is developed by Parth Shukla for Google Summer of Code 2022 with Re
 - [Blog Report 6](#blog-report-6) (Jul 11 ~ Jul 17)
 - [Blog Report 7](#blog-report-7) (Jul 18 ~ Jul 24) 
 - [Progress Check](#progress-check)
-
+- [Blog Report 8](#blog-report-8) (Jul 25 ~ Jul 31)
 
 
 ## Community Bonding Period 
@@ -482,3 +482,18 @@ I have decided a list of targets I think are possible and listed them in the ord
 - Create better embeddings - Finding better data and putting better cleaning techniques should give better embeddings eventually helping the pipeline.
 - Tagging more data for YOLO and getting better labels. For example, on call Mark explained how a lamb is also a common symbol in christian iconography which I was not aware about, so I must've missed some stuff during initial dataset curation, which can be helpful to the pipeline.
 - Finally, adding a module to pipeline that can help to classify which era does a mary painting belong to.
+
+### Blog Report 8
+
+Goals:
+- 
+
+#### Monday
+
+- Finished presentation for mentor meet. [Link]()
+- Learning about singularities
+1. [https://docs.sylabs.io/guides/2.6/user-guide/build_a_container.html](https://docs.sylabs.io/guides/2.6/user-guide/build_a_container.html)
+2. [CASE HPC singularity site](https://sites.google.com/a/case.edu/hpcc/hpc-cluster/software/Software-Guide/s-t/singularity)
+3. [Youtube tutorial](https://www.youtube.com/watch?v=nrgO3Q8-6hQ&ab_channel=DanielPersson)
+4. [Basics](https://www.youtube.com/watch?v=UbxCwcreJqU&ab_channel=CtrlIQ)
+5. [SLURM Array jobs](https://www.youtube.com/watch?v=HWzpXJIvey4&t=1s&ab_channel=AaltoScientificComputing), not really relevant but I found this useful while learning about HPC.
