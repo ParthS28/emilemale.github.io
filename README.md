@@ -485,8 +485,9 @@ I have decided a list of targets I think are possible and listed them in the ord
 
 ### Blog Report 8
 
-Goals:
-- 
+Goals-
+- Learn about Singularity
+- Deploy Emile Male singularity on CASE HPC
 
 #### Monday
 
@@ -497,3 +498,67 @@ Goals:
 3. [Youtube tutorial](https://www.youtube.com/watch?v=nrgO3Q8-6hQ&ab_channel=DanielPersson)
 4. [Basics](https://www.youtube.com/watch?v=UbxCwcreJqU&ab_channel=CtrlIQ)
 5. [SLURM Array jobs](https://www.youtube.com/watch?v=HWzpXJIvey4&t=1s&ab_channel=AaltoScientificComputing), not really relevant but I found this useful while learning about HPC.
+
+#### Tuesday 
+
+Saw some videos made by Harshit Mohan Kumar on Singularity. You can check their [github repo](https://github.com/Harsh188/GSoC-RedHenLab-MTVSS-2022) for the docker code. I found those helpful.
+
+#### Wednesday
+
+Started coding dockerfile on my github repo and using github actions making the container. 
+
+I faced some issue installing pycocotools which is used in YOLOv6 module. Removing the dependency helped me build the container.
+
+#### Thursday
+
+Singularity deployed!!
+
+My code for the Dockerfile
+
+```
+FROM ubuntu:20.04
+
+RUN apt-get update
+
+RUN apt-get install --assume-yes --no-install-recommends --quiet \
+        python3 \
+        python3-pip \
+        ffmpeg
+
+RUN pip3 install --no-cache --upgrade pip setuptools
+
+WORKDIR /EmileMale
+
+ADD ./EmileMaleV1/ .
+
+RUN ls -a 
+
+RUN pip3 install -r requirements.txt
+```
+
+Building on the ubuntu 20.04 image, I first copy the contents of repository and install the relevant modules required to the docker image using pip.
+
+My code for the shell script
+
+```
+#!/bin/bash
+
+module load singularity/3.8.1
+
+mkdir emilemale
+cd emilemale
+rsync -az pas193@rider.case.edu:/mnt/rds/redhen/gallina/home/pas193/EmileMaleV1/ .
+rsync -az pas193@rider.case.edu:/mnt/rds/redhen/gallina/home/pas193/singularity/emilemalev1.sif .
+
+singularity exec -e -B /mnt/rds/redhen/gallina/home/pas193/test/emilemale emilemalev1.sif ./run.sh
+
+mv out1.csv ../.
+mv out2/ ../out2
+mv final.csv ../
+
+cd ..
+rm -rf emilmale
+
+```
+
+First I load the singularity module to the HPC. Then I make the folder for the pipeline where I copy the environment using singularity and all the other python scripts and model weights required. Followed by singularity exec command. Something to note is that I had to bind the singularity to the current path and then execute the run.sh script which I have explained before in my blog(it is the executor script for the pipeline). Finally I move the output from all three stages back to the original repository and delete all the files I rsync-ed.
