@@ -491,7 +491,7 @@ Goals-
 
 #### Monday
 
-- Finished presentation for mentor meet. [Link]()
+- Finished presentation for mentor meet. [Link](https://github.com/ParthS28/gsoc22-christian-iconography/blob/master/presentations/GSoC%20mid%20eval.pdf)
 - Learning about singularities
 1. [https://docs.sylabs.io/guides/2.6/user-guide/build_a_container.html](https://docs.sylabs.io/guides/2.6/user-guide/build_a_container.html)
 2. [CASE HPC singularity site](https://sites.google.com/a/case.edu/hpcc/hpc-cluster/software/Software-Guide/s-t/singularity)
@@ -562,3 +562,8 @@ rm -rf emilmale
 ```
 
 First I load the singularity module to the HPC. Then I make the folder for the pipeline where I copy the environment using singularity and all the other python scripts and model weights required. Followed by singularity exec command. Something to note is that I had to bind the singularity to the current path and then execute the run.sh script which I have explained before in my blog(it is the executor script for the pipeline). Finally I move the output from all three stages back to the original repository and delete all the files I rsync-ed.
+
+#### Friday
+
+- Made some small changes to the pipeline so that it can function as an end-to-end prediction pipeline without the requirement for labelled data. Changes - changed the dataloader for ResNet, output format for stage 1 and stage 3. [Code for version 2 of the pipeline]().
+- Reading of The Gothic Image Religious Art in France of the Thirteenth Century Emile Male.
