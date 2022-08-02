@@ -22,6 +22,7 @@ This project is developed by Parth Shukla for Google Summer of Code 2022 with Re
 - [Blog Report 7](#blog-report-7) (Jul 18 ~ Jul 24) 
 - [Progress Check](#progress-check)
 - [Blog Report 8](#blog-report-8) (Jul 25 ~ Jul 31)
+- [Blog Report 9](#blog-report-9) (Aug 1 - Aug 6)
 
 
 ## Community Bonding Period 
@@ -567,3 +568,26 @@ First I load the singularity module to the HPC. Then I make the folder for the p
 
 - Made some small changes to the pipeline so that it can function as an end-to-end prediction pipeline without the requirement for labelled data. Changes - changed the dataloader for ResNet, output format for stage 1 and stage 3. [Code for version 2 of the pipeline]().
 - Reading of The Gothic Image Religious Art in France of the Thirteenth Century Emile Male.
+
+#### Saturday 
+
+Continued reading The Gothic Image Religious Art in France of the Thirteenth Century Emile Male.
+
+### Blog Report 9
+
+Goals-
+- Use more text to create better word embeddings.
+
+#### Monday
+
+Initial reading of Emile Male has given me the following ideas for pre-processing.
+
+- Currently, I am only creating coordinates for a single word like mary or crown but in text group of words are also used for example, "Our Mother" for mary, "Saint John", "New testament". Capturing these group of words will be useful.
+- Words like "dove" should be grouped to bird for our use-case.
+- Since there are many divisions in paintings of Mother mary as well depicting various phases of her life, I can try to include more text on them so learn their embeddings.
+
+#### Tuesday
+
+- Start collecting more data from Emile Male.
+
+Sentences like "the Virgin must wear a veil, symbol of virginity, and the Jews are known by their cone-shaped caps." and If he would represent the Crucifixion he must place the Virgin and the lancebearer to the right of the Cross, St. John and the man with the sponge to the left." Why am I doing this? Collecting more of these sentences will lead to more meaningful embeddings. How am I doing this? It is a time-taking process because Emile Male has a lot of sentences with the word "virgin" but not all of them are relevant, for example, a few of these occurances are for the Wise and Foolish Virgins which is not something that I am focusing to solve right now. So, I need to go through all the sentences and hand-pick the ones which I feel are relevant. 
