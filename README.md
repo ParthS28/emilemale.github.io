@@ -591,3 +591,16 @@ Initial reading of Emile Male has given me the following ideas for pre-processin
 - Start collecting more data from Emile Male.
 
 Sentences like "the Virgin must wear a veil, symbol of virginity, and the Jews are known by their cone-shaped caps." and If he would represent the Crucifixion he must place the Virgin and the lancebearer to the right of the Cross, St. John and the man with the sponge to the left." Why am I doing this? Collecting more of these sentences will lead to more meaningful embeddings. How am I doing this? It is a time-taking process because Emile Male has a lot of sentences with the word "virgin" but not all of them are relevant, for example, a few of these occurances are for the Wise and Foolish Virgins which is not something that I am focusing to solve right now. So, I need to go through all the sentences and hand-pick the ones which I feel are relevant. 
+
+#### Wednesday
+
+- Collecting data from Emile Male and artwork descriptions from the dataset curated by [Rishab](https://lazycodes7.github.io/categories/google-summer-of-code/)
+
+- As per discussion with Prof. Mark Turner, I added lamb to the predefined classes for YOLO. Examples:
+
+![](images/lamb1.png)
+
+![](images/lamb2.png)
+
+![](images/lamb3.png)
+
