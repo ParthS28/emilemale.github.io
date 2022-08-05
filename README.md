@@ -629,4 +629,22 @@ Results - Closest words to Mary
 [['mary', 0], ['angel', 0.0682279221558858], ['on', 0.08013687422711313], ['art', 0.08430970302191221], ['christ', 0.08823141795603906], ['baby', 0.09108800980423859],
 ```
 
-As you can see, adding more relevant data is giving more intuitive results. 
+As you can see, adding more relevant data is giving more intuitive results.
+
+#### Friday 
+
+- Tagged more 100 images on Mother Mary.
+
+One of the common types of art is baby christ with mother mary and john the baptist as a child like the one here. 
+
+![](images/johnbaptist.png)
+
+There are some pieces of art which are just tough to comprehend. I do not expect the system to work well for these.
+
+![](images/tough.png)
+
+- Adding some preprocessing code for word2vec. 
+
+I noticed that using a lemmatizer before replacing the synonyms had adverse effect on the embeddings, so I decided to shift the lemmatizer after the replacing.
+
+I also need to work on words which occur as pair. For example, St. John or Thirteenth-century as these words only make sense when they occur together otherwise they mean something else completely. 
