@@ -577,6 +577,7 @@ Continued reading The Gothic Image Religious Art in France of the Thirteenth Cen
 
 Goals-
 - Use more text to create better word embeddings.
+- Label more data for YOLO and re-train YOLO.
 
 #### Monday
 
@@ -604,3 +605,28 @@ Sentences like "the Virgin must wear a veil, symbol of virginity, and the Jews a
 
 ![](images/lamb3.png)
 
+#### Thursday 
+
+- Tagged 100 more images for YOLO. Notable examples
+
+This artwork is Mary at the cross. We know that there is Christ in this picture because of the writing at the top of the cross. This is good way to identify Christ and should be kept in mind for future use cases. 
+![](images/yoloex.png)
+
+Another common theme of artwork is Anunciation of Mary. In these, there is a angel from heaven who comes down to Mary while she is prayer to tell her that she is going to be pregnant by God. Another thing I noticed was that in a lot of these, there are white flowers, book and a flying bird(always at a distance). These features can be used to cause the distinction. 
+
+![](images/anunciation.png)
+
+![](images/anunciation2.png)
+
+Coronation of Mary, the event in which Mary is crowned as the queen of heaven.
+
+![](images/coronation.png)
+
+- Training word2vec on the new dataset to observe results. Tomorrow I will write some more code to the preprocessing pipeline.
+
+Results - Closest words to Mary
+```
+[['mary', 0], ['angel', 0.0682279221558858], ['on', 0.08013687422711313], ['art', 0.08430970302191221], ['christ', 0.08823141795603906], ['baby', 0.09108800980423859],
+```
+
+As you can see, adding more relevant data is giving more intuitive results. 
