@@ -22,7 +22,8 @@ This project is developed by Parth Shukla for Google Summer of Code 2022 with Re
 - [Blog Report 7](#blog-report-7) (Jul 18 ~ Jul 24) 
 - [Progress Check](#progress-check)
 - [Blog Report 8](#blog-report-8) (Jul 25 ~ Jul 31)
-- [Blog Report 9](#blog-report-9) (Aug 1 - Aug 6)
+- [Blog Report 9](#blog-report-9) (Aug 1 - Aug 7)
+- [Blog Report 10](#blog-report-10) (Aug 8 - Aug 14)
 
 
 ## Community Bonding Period 
@@ -648,3 +649,45 @@ There are some pieces of art which are just tough to comprehend. I do not expect
 I noticed that using a lemmatizer before replacing the synonyms had adverse effect on the embeddings, so I decided to shift the lemmatizer after the replacing.
 
 I also need to work on words which occur as pair. For example, St. John or Thirteenth-century as these words only make sense when they occur together otherwise they mean something else completely. 
+
+### Blog Report 10
+
+Goals - 
+- Re-train YOLO
+- Complete documentation for version 1 and 2 of the pipeline
+- Read up on different representations of Mother Mary
+- Try to figure out if I can utilise openCV for gesture detection in art (see [work by Sergiy Turchyn](https://www.redhenlab.org/home/the-cognitive-core-research-topics-in-red-hen/video-processing-pipeline/gesture-detection-2017))
+
+#### Monday
+
+- Re-trained YOLO on the dataset which can be found [here](https://drive.google.com/file/d/1ULLeMJoKwqE0YRXu3tUjpB4RrYRFmS8J/view?usp=sharing). 
+
+Results - 
+
+Good results -
+
+![](images/newyologood2.jpg)
+
+![](images/newyologood3.jpg)
+
+![](images/newyologood4.jpg)
+
+![](images/newyologood5.jpg)
+
+![](images/newyologood6.jpg)
+
+
+![](images/newyologood7.jpg)
+
+![](images/good_yolo_1.jpg)
+
+![](images/goodyolo_2.jpg)
+
+![](images/goodyolo_3.jpg)
+
+Bad results 
+
+![](images/newyolobad1.jpg)
+
+![](images/badyolo.jpg)
+
