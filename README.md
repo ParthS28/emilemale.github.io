@@ -21,7 +21,7 @@ This project is developed by Parth Shukla for Google Summer of Code 2022 with Re
 - [Blog Report 6](#blog-report-6) (Jul 11 - Jul 17)
 - [Blog Report 7](#blog-report-7) (Jul 18 - Jul 24) 
 - [Progress Check](#progress-check)
-- [Blog Report 8](#blog-report-8) (Jul 25 ~ Jul 31)
+- [Blog Report 8](#blog-report-8) (Jul 25 - Jul 31)
 - [Blog Report 9](#blog-report-9) (Aug 1 - Aug 7)
 - [Blog Report 10](#blog-report-10) (Aug 8 - Aug 14)
 
@@ -717,36 +717,43 @@ It is very similar to birth of Christ. Only difference I find between them is th
 - Marriage of the virgin
 
 Marriage of the virgin depicts a ring ceremony between Mary and Joseph performed in the presence of a minister. Mary's hand is extended and so is Josephs'. A pose detection method might be helpful to classify among these.
+
 ![](images/marriageofvirgin.jpg)
 
 - The annunciation of the Blessed Virgin
 
 This usually depicts the scene in which an angel comes down from heaven to tell Mary that she will conceive the child of God soon. There are usually flowers, a book, a bird far away and Mary in a prayer position to identify these paintings.
+
 ![](images/anunciation.jpg)
 
 - Nativity of Jesus
 
 It is very similar to birth of Virgin. Only difference I find between them is that Christ was born in a stable whereas Mary was born in a house near a temple in Jerusalem. I think I can leverage this to differentiate between them.
+
 ![](images/nativityofjesus.jpg)
 
 - Adoration of Magi
 
 This depicts the scenes when the three Magi got gifts for the Child of God. Usually, one of them is on their knees with hands together in prayer position, others might be standing but are always holding gifts. These factors can be used to identify these paintings.
+
 ![](images/adoration.jpg)
 
 - Coronation of the Virgin
 
 A very vivid event. Virgin is crowned as the Queen of heaven. Usually, two saints are crowning the Virgin in presence of angels and birds. 
+
 ![](images/coronation.jpeg)
 
 - Assumption of the Virgin
 
 The virgin's ascension to the heaven. Lifted up by angels. 
+
 ![](images/assumption.jpg)
 
 - Death of the Virgin
 
 Mary's body lying in the center with people around her moping so some of pose approximation might help in this case.
+
 ![](images/deathvirgin.jpg)
 
 
