@@ -730,7 +730,7 @@ This usually depicts the scene in which an angel comes down from heaven to tell 
 
 It is very similar to birth of Virgin. Only difference I find between them is that Christ was born in a stable whereas Mary was born in a house near a temple in Jerusalem. I think I can leverage this to differentiate between them.
 
-![](images/nativityofjesus.jpg)
+![](images/nativityjesus.jpg)
 
 - Adoration of Magi
 
@@ -742,7 +742,7 @@ This depicts the scenes when the three Magi got gifts for the Child of God. Usua
 
 A very vivid event. Virgin is crowned as the Queen of heaven. Usually, two saints are crowning the Virgin in presence of angels and birds. 
 
-![](images/coronation.jpeg)
+![](images/coronation.jpg)
 
 - Assumption of the Virgin
 
@@ -756,4 +756,12 @@ Mary's body lying in the center with people around her moping so some of pose ap
 
 ![](images/deathvirgin.jpg)
 
+#### Saturday
 
+Experimenting with Mediapipe for pose approximation.
+
+![](images/pose1.png)
+
+![](images/pose2.png)
+
+These estimations can be helpful in classifying the scene depicted in the painting.
