@@ -24,6 +24,7 @@ This project is developed by Parth Shukla for Google Summer of Code 2022 with Re
 - [Blog Report 8](#blog-report-8) (Jul 25 - Jul 31)
 - [Blog Report 9](#blog-report-9) (Aug 1 - Aug 7)
 - [Blog Report 10](#blog-report-10) (Aug 8 - Aug 14)
+- [Blog Report 11](#blog-report-11) (Aug 15 - Aug 21)
 
 
 ## Community Bonding Period 
@@ -765,3 +766,59 @@ Experimenting with Mediapipe for pose approximation.
 ![](images/pose2.png)
 
 These estimations can be helpful in classifying the scene depicted in the painting.
+
+
+### Blog Report 11
+
+Goals
+
+- Version 3 of the pipeline with the new YOLO weights and embeddings and observe results
+- Continue working on the gesture estimation pipeline
+
+
+#### Monday
+
+Working on the Version 3 of the pipeline.
+
+#### Tuesday 
+
+Pushed code for [EmileMaleV3](https://github.com/ParthS28/gsoc22-christian-iconography/tree/master/EmileMaleV3).
+
+Before further working on the gesture estimation pipeline, we need to take a step back and decide what all factors can be looked for to identify paintings:
+
+
+- Birth of Virgin Mary/Nativity of the blessed Virgin Mary
+
+Usually, shown in the picture - A baby(mary) and people around in the hotel.
+
+- Marriage of the virgin
+
+The two main protagonists facing each other with their extended towards each other.
+
+- The annunciation of the Blessed Virgin
+
+An angel, a person(mary), a book, flowers and bird far away(spirit of christ). These features are consistent in all annunciation art.
+
+- Nativity of Jesus
+
+Usually, shown in the picture - A baby and people around in the stable. Presence of animals can be striking feature to distinguish this.
+
+- Adoration of Magi
+
+Baby with the three Magi, usually one of the Magi is kneeling and all of them come bearing gifts. 
+
+- Coronation of the Virgin
+
+Two saints crowning the queen(mary) and bird is also common. The hand position of the saints can be used.
+
+- Assumption of the Virgin
+
+Still unclear on what can be used.
+
+- Death of the Virgin
+
+Mary lying in the middle of the scene. People around weeping or sad.
+
+- Virgin and the child
+
+Baby and Mother Mary. Sometimes baby has a fruit or a bird in his hand.
