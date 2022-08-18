@@ -813,7 +813,7 @@ Two saints crowning the queen(mary) and bird is also common. The hand position o
 
 - Assumption of the Virgin
 
-Still unclear on what can be used.
+Still unclear on what features can be used.
 
 - Death of the Virgin
 
@@ -822,3 +822,19 @@ Mary lying in the middle of the scene. People around weeping or sad.
 - Virgin and the child
 
 Baby and Mother Mary. Sometimes baby has a fruit or a bird in his hand.
+
+#### Wednesday and Thursday
+
+As per above discusion, each type of image has a certain set of characteristics that can be used to identify the art. But these features can overlap so we need to assign a confidence score for each class.
+
+Methodology I am planning to use - 
+
+1. First let's consider all the classes I am taking right now.
+
+['birth_virgin', 'marriage', 'annunciation', 'birth_jesus', 'adoration', 'coronation', 'assumption', 'death', 'virgin_and_child']
+
+2. Define an array of zeros of the 9 for all the classes.
+
+3. Then we consider all the labels produced by YOLO for that image. If we see a baby, we add a point to classes Birth of virgin, Birth of Jesus, Virgin with child, Adoration of Magi since these classes have a baby in them. If we see a lamb, then we add a point to Birth of jesus because he was born in a stable.
+
+4. Apply softmax and return the most probable class.
