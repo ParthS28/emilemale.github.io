@@ -830,7 +830,6 @@ As per above discusion, each type of image has a certain set of characteristics 
 Methodology I am planning to use - 
 
 1. First let's consider all the classes I am taking right now.
-
 ['birth_virgin', 'marriage', 'annunciation', 'birth_jesus', 'adoration', 'coronation', 'assumption', 'death', 'virgin_and_child']
 
 2. Define an array of zeros of the 9 for all the classes.
@@ -838,3 +837,45 @@ Methodology I am planning to use -
 3. Then we consider all the labels produced by YOLO for that image. If we see a baby, we add a point to classes Birth of virgin, Birth of Jesus, Virgin with child, Adoration of Magi since these classes have a baby in them. If we see a lamb, then we add a point to Birth of jesus because he was born in a stable.
 
 4. Apply softmax and return the most probable class.
+
+The methodology above is not complete and I will further work on it.
+
+#### Friday 
+
+Mentor meeting - Discussion on the scope of project and how to wrap it up.
+
+#### Saturday
+
+Results of the methodology mentioned above- 
+
+- ![](images/virginwithchild1.jpg)
+
+Prediction - 
+
+1. 30.8% Virgin with child
+2. 11.3% Birth of Virgin
+3. 11.3% Birth of Jesus
+
+- ![](images/assumption2.jpg)
+
+Prediction -
+
+1. 59.64% Assumption of the blessed Virgin
+2. 8.07% Coronation
+3. 8.07% Death of Virgin
+
+- ![](images/annunciation1.jpg)
+
+Prediction -
+
+1. 78.1% Annunciation
+2. 10.6% Coronation
+3. 3.9% Virgin with Child
+
+- ![](images/coronation2.jpg)
+
+Prediction - 
+
+1. 59.49% Coronation
+2. 8% Death
+3. 8% Marriage
