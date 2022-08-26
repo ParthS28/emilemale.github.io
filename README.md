@@ -25,6 +25,7 @@ This project is developed by Parth Shukla for Google Summer of Code 2022 with Re
 - [Blog Report 9](#blog-report-9) (Aug 1 - Aug 7)
 - [Blog Report 10](#blog-report-10) (Aug 8 - Aug 14)
 - [Blog Report 11](#blog-report-11) (Aug 15 - Aug 21)
+- [Blog Report 12](#blog-report-12) (Aug 22 - Aug 28)
 
 
 ## Community Bonding Period 
@@ -879,3 +880,32 @@ Prediction -
 1. 59.49% Coronation
 2. 8% Death
 3. 8% Marriage
+
+
+### Blog Report 12
+
+Goals - 
+- Continue working on the stage 4 of the pipeline
+
+#### Monday
+
+Creating a data augmentation pipeline in order to re-train YOLO. I have come to understand that I need my object detection model to become as accurate as possible because it forms the base of my pipeline so it makes sense to spend more time on it. 
+
+#### Tuesday and Wednesday
+
+Augmented dataset - [Link](https://drive.google.com/file/d/16ETFODVamGJOg8nE6jDJ07_IjeTOQOIE/view?usp=sharing)
+
+Training YOLO on HPC.
+
+#### Thursday 
+
+Working on pose approximation.
+
+![](images/pose.png)
+
+Using these keypoints generated to estimate what a person is doing. Currently, I am only considering 4 poses - 
+
+- Praying - if hands are close to each other
+- Extending hand - if the avg position of hand is away from the corresponding shoulder
+- Lying down - if height of nose and shoulder are similar
+- Crucifix - Both left hand and right hand are extended, could be helpful for Christ
