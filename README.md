@@ -26,6 +26,7 @@ This project is developed by Parth Shukla for Google Summer of Code 2022 with Re
 - [Blog Report 10](#blog-report-10) (Aug 8 - Aug 14)
 - [Blog Report 11](#blog-report-11) (Aug 15 - Aug 21)
 - [Blog Report 12](#blog-report-12) (Aug 22 - Aug 28)
+- [Blog Report 13](#blog-report-13) (Aug 29 - Sep 4)
 
 
 ## Community Bonding Period 
@@ -909,3 +910,40 @@ Using these keypoints generated to estimate what a person is doing. Currently, I
 - Extending hand - if the avg position of hand is away from the corresponding shoulder
 - Lying down - if height of nose and shoulder are similar
 - Crucifix - Both left hand and right hand are extended, could be helpful for Christ
+
+Slow progress because I was unwell.
+
+
+### Blog Report 13
+
+Goals - 
+- Integrate pose pipeline into the scoring system
+- Integrate this part into the main pipeline 
+- Deploy the pipeline to HPC
+
+#### Monday
+
+As we are nearing the end of the coding period, it's time to wrap up all the loose ends complete documentation on how to use and results.
+
+To start the week, I decided to integrate the pose code in my scoring system. 
+
+Examples of gesture - 
+
+Prayer
+
+![](images/prayer.jpg)
+
+Extended hand
+
+![](images/extendedhand.jpg)
+
+Examples not working 
+
+No gesture detected
+
+![](images/deathvirgin_pose.jpg)
+
+![](images/Q9387693.jpg)
+
+**Inference - lying down is not being detected**
+
