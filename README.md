@@ -947,3 +947,14 @@ No gesture detected
 
 **Inference - lying down is not being detected**
 
+#### Tuesday 
+
+Further tests proved that lying down was indeed being recognised, however the consistency might be low.
+
+#### Wednesday 
+
+Meeting
+
+[Slides](https://github.com/ParthS28/gsoc22-christian-iconography/blob/master/presentations/Meeting_31_8.pdf)
+
+No more work done this week because of college exams.
