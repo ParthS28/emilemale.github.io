@@ -27,6 +27,10 @@ This project is developed by Parth Shukla for Google Summer of Code 2022 with Re
 - [Blog Report 11](#blog-report-11) (Aug 15 - Aug 21)
 - [Blog Report 12](#blog-report-12) (Aug 22 - Aug 28)
 - [Blog Report 13](#blog-report-13) (Aug 29 - Sep 4)
+- [Blog Report 14](#blog-report-14) (Sep 5 - Sep 12)
+
+### Future work
+- [What to do next?](#what-to-do-next)
 
 
 ## Community Bonding Period 
@@ -958,3 +962,30 @@ Meeting
 [Slides](https://github.com/ParthS28/gsoc22-christian-iconography/blob/master/presentations/Meeting_31_8.pdf)
 
 No more work done this week because of college exams.
+
+### Blog Report 14
+
+Goals -
+
+- Wrap up version 4 
+- Complete documentation
+
+#### Monday 
+
+Deployed Version 4 on HPC.
+
+#### Tuesday and wednesday
+
+Completed documentation.
+
+
+### What to do next?
+
+There is a lot of work that can be done on the pipeline. I have tried to make it very modular so that it is easy to add and remove modules as the pipeline becomes bigger.
+
+Ideas -
+- Trying other object recognition models, other than YOLO, and comparing their performance. The YOLO model trained is not perfect(which is a tough ask anyway) and can be improved using more data and a different model. 
+- The embeddings currently do not handle phrases like thirteenth century. This can be included in Word2Vec model.
+- The embeddings in the current state focus only on Mother Mary, work can be done to create more generalized to include all the other saints. Try to include as much christian iconography text you can find for eg Emile Male - The Gothic Image_ Religious Art in France of the Thirteenth Century (Icon Editions Series) (1972) 
+- Add more "stories" of Mother Mary in the last module that I have worked on.
+- Add more modules for other saints.  
