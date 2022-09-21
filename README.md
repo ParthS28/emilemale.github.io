@@ -1,6 +1,8 @@
-## Welcome to Emile Male Pipeline
+## Welcome to Émile Mâle Pipeline
 
-This project is developed by Parth Shukla for Google Summer of Code 2022 with Red Hen Lab
+This project is developed by Parth Shukla for Google Summer of Code 2022 with Red Hen Lab.
+
+To anyone interested in approaching me to clear things, feel free to contact me on parthshukla285@gmail.com
 
 ### Project Description 
 - A knowledge extraction pipeline for artworks from christian iconography that will be used to create a knowledge graph for Christian Iconography. The intention of knowledge graph is that it should help untutored eyes find connections between different artworks. This project is divided into 4 main parts:
@@ -98,7 +100,7 @@ What, Why and How of the project
 
 What
 
-The purpose of this project is to come up with a pipeline which could imitate Emile Male and act as a learning tool which could help the a beginner just dipping their toes in the ocean of Christian Iconography.
+The purpose of this project is to come up with a pipeline which could imitate Émile Mâle and act as a learning tool which could help the a beginner just dipping their toes in the ocean of Christian Iconography.
 
 Why
 
@@ -496,7 +498,7 @@ I have decided a list of targets I think are possible and listed them in the ord
 
 Goals-
 - Learn about Singularity
-- Deploy Emile Male singularity on CASE HPC
+- Deploy Émile Mâle singularity on CASE HPC
 
 #### Monday
 
@@ -575,11 +577,11 @@ First I load the singularity module to the HPC. Then I make the folder for the p
 #### Friday
 
 - Made some small changes to the pipeline so that it can function as an end-to-end prediction pipeline without the requirement for labelled data. Changes - changed the dataloader for ResNet, output format for stage 1 and stage 3. [Code for version 2 of the pipeline]().
-- Reading of The Gothic Image Religious Art in France of the Thirteenth Century Emile Male.
+- Reading of The Gothic Image Religious Art in France of the Thirteenth Century Émile Mâle.
 
 #### Saturday 
 
-Continued reading The Gothic Image Religious Art in France of the Thirteenth Century Emile Male.
+Continued reading The Gothic Image Religious Art in France of the Thirteenth Century Émile Mâle.
 
 ### Blog Report 9
 
@@ -589,7 +591,7 @@ Goals-
 
 #### Monday
 
-Initial reading of Emile Male has given me the following ideas for pre-processing.
+Initial reading of Émile Mâle has given me the following ideas for pre-processing.
 
 - Currently, I am only creating coordinates for a single word like mary or crown but in text group of words are also used for example, "Our Mother" for mary, "Saint John", "New testament". Capturing these group of words will be useful.
 - Words like "dove" should be grouped to bird for our use-case.
@@ -597,13 +599,13 @@ Initial reading of Emile Male has given me the following ideas for pre-processin
 
 #### Tuesday
 
-- Start collecting more data from Emile Male.
+- Start collecting more data from Émile Mâle.
 
 Sentences like "the Virgin must wear a veil, symbol of virginity, and the Jews are known by their cone-shaped caps." and If he would represent the Crucifixion he must place the Virgin and the lancebearer to the right of the Cross, St. John and the man with the sponge to the left." Why am I doing this? Collecting more of these sentences will lead to more meaningful embeddings. How am I doing this? It is a time-taking process because Emile Male has a lot of sentences with the word "virgin" but not all of them are relevant, for example, a few of these occurances are for the Wise and Foolish Virgins which is not something that I am focusing to solve right now. So, I need to go through all the sentences and hand-pick the ones which I feel are relevant. 
 
 #### Wednesday
 
-- Collecting data from Emile Male and artwork descriptions from the dataset curated by [Rishab](https://lazycodes7.github.io/categories/google-summer-of-code/)
+- Collecting data from Émile Mâle and artwork descriptions from the dataset curated by [Rishab](https://lazycodes7.github.io/categories/google-summer-of-code/)
 
 - As per discussion with Prof. Mark Turner, I added lamb to the predefined classes for YOLO. Examples:
 
@@ -711,7 +713,7 @@ Bad results
 
 #### Tuesday and Wednesday
 
-Completed documentation for Version 1 and Version 2 of the Emile Male pipeline. 
+Completed documentation for Version 1 and Version 2 of the Émile Mâle pipeline. 
 
 Features particular to each type- 
 
@@ -986,6 +988,6 @@ There is a lot of work that can be done on the pipeline. I have tried to make it
 Ideas -
 - Trying other object recognition models, other than YOLO, and comparing their performance. The YOLO model trained is not perfect(which is a tough ask anyway) and can be improved using more data and a different model. 
 - The embeddings currently do not handle phrases like thirteenth century. This can be included in Word2Vec model.
-- The embeddings in the current state focus only on Mother Mary, work can be done to create more generalized to include all the other saints. Try to include as much christian iconography text you can find for eg Emile Male - The Gothic Image_ Religious Art in France of the Thirteenth Century (Icon Editions Series) (1972) 
+- The embeddings in the current state focus only on Mother Mary, work can be done to create more generalized to include all the other saints. Try to include as much christian iconography text you can find for eg Émile Mâle - The Gothic Image_ Religious Art in France of the Thirteenth Century (Icon Editions Series) (1972) 
 - Add more "stories" of Mother Mary in the last module that I have worked on.
 - Add more modules for other saints.  
