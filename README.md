@@ -2,6 +2,8 @@
 
 This project is developed by Parth Shukla for Google Summer of Code 2022 with Red Hen Lab.
 
+[Full code](https://github.com/ParthS28/gsoc22-christian-iconography) 
+
 To anyone interested in approaching me to clear things, feel free to contact me on parthshukla285@gmail.com
 
 ### Project Description 
